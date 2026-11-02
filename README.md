@@ -36,18 +36,12 @@ Independent float-switch check that confirms critical overflow
 Three-stage alert logic with on-site OLED status and buzzer alarm
 Low-cost, off-the-shelf parts that are easy to prototype on a breadboard
 Autonomous operation with no operator needed to raise a local alert
+
 System Architecture
- ┌──────────────────┐
- │ HC-SR04          │──┐
- │ (distance)       │  │      ┌───────────────────────────┐      ┌──────────────┐
- └──────────────────┘  ├────▶ │ Arduino UNO Q              │────▶ │ SSD1306 OLED │
- ┌──────────────────┐  │      │  • STM32 MCU: sensor       │      └──────────────┘
- │ Float switch     │──┘      │    polling (real time)     │      ┌──────────────┐
- │ (critical limit) │         │  • Qualcomm MPU: Linux     │────▶ │ Active buzzer│
- └──────────────────┘         │    data processing         │      └──────────────┘
-                              └───────────────────────────┘
-                                   Powered via USB-C (5V / 2A)
+<img width="601" height="225" alt="image" src="https://github.com/user-attachments/assets/80b34de6-ce78-46df-a5c2-b13d3ebab62f" />
+
 Components Required
+
 Category	Component	Model / Specification
 Microcontroller	Arduino UNO Q	4 GB RAM / 32 GB eMMC
 Primary sensor	Ultrasonic sensor	HC-SR04 (2 cm – 400 cm)
@@ -57,8 +51,6 @@ Acoustic actuator	Active buzzer	5V active sounder module
 Power supply	USB-C adapter / cable	5V DC / 2A
 Prototyping	Jumpers and breadboard	Male-to-female / male-to-male
 Circuit and Wiring
-
-Fill in the pin numbers from your own build.
 
 Module	Signal	UNO Q pin
 HC-SR04	VCC / GND	5V / GND
@@ -121,16 +113,5 @@ Rainfall and weather-forecast data fusion
 AI-based predictive insights
 Smart-city integration and use in other disaster types
 Better sensor reliability, power backup and data security
-Project Structure
-
-Adjust to match your repository.
-
-.
-├── src/            # Firmware / sketch
-├── docs/
-│   └── images/     # Circuit diagram, photos, screenshots
-├── README.md
-└── LICENSE
-Reference
 
 [1] [Authors], "[Paper title]," in Proc. 2025 7th Int. Conf. Innovative Data Communication Technologies and Application (ICIDCA), Coimbatore, India, Oct. 6–8, 2025. IEEE. doi: 10.1109/ICIDCA66325.2025.11280326
